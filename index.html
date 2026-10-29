@@ -1,125 +1,276 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Privacy Policy — Cooky's Cafe</title>
-<style>
-  body { font-family: -apple-system, 'Segoe UI', Roboto, sans-serif; background: #F4EBE1; color: #4E3629; margin: 0; padding: 0; line-height: 1.65; }
-  .wrap { max-width: 720px; margin: 0 auto; padding: 40px 24px 80px; }
-  header { text-align: center; margin-bottom: 32px; }
-  h1 { font-size: 28px; margin-bottom: 4px; }
-  .sub { color: #8D6E63; font-size: 14px; }
-  h2 { font-size: 18px; margin-top: 28px; border-bottom: 2px solid #D7CCC8; padding-bottom: 6px; }
-  .card { background: #FFF8F2; border: 1px solid #D7CCC8; border-radius: 16px; padding: 20px 24px; margin-top: 16px; }
-  .flag { font-size: 22px; }
-  ul { padding-left: 20px; }
-  .divider { text-align: center; margin: 48px 0 8px; color: #A1887F; font-size: 20px; }
-  .effective { text-align: center; color: #8D6E63; font-size: 13px; margin-top: 40px; }
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy — Cooky's Cafe</title>
+  
+  <!-- Oyunun cozy hissiyatını web'e taşımak için tatlı ve yuvarlak fontlar -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600&family=Nunito:ital,wght@0,400;0,700;0,900;1,400&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #F4EBE1;
+      --card: #FFF8F2;
+      --text: #4E3629;
+      --soft: #8D6E63;
+      --border: #D7CCC8;
+      --accent: #A0522D;
+      --accent-hover: #8B4513;
+    }
+
+    body { 
+      font-family: 'Nunito', sans-serif; 
+      background: var(--bg); 
+      color: var(--text); 
+      margin: 0; 
+      padding: 0; 
+      line-height: 1.7; 
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .wrap { 
+      max-width: 680px; 
+      margin: 0 auto; 
+      padding: 50px 24px 80px; 
+    }
+
+    header { 
+      text-align: center; 
+      margin-bottom: 32px; 
+    }
+
+    h1 { 
+      font-family: 'Fredoka', sans-serif;
+      font-size: 36px; 
+      color: var(--accent);
+      margin-bottom: 6px; 
+      letter-spacing: 0.5px;
+    }
+
+    /* Estetik Yıldız Divider (Başlık Altı İçin) */
+    .star-divider {
+      text-align: center;
+      color: var(--soft);
+      font-size: 16px;
+      letter-spacing: 12px;
+      margin: 12px 0 16px;
+      opacity: 0.6;
+    }
+
+    .sub { 
+      color: var(--soft); 
+      font-size: 14px; 
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+    }
+
+    /* Dil Değiştirme Butonu (Tombik Oyun Butonu Stili) */
+    .toggle-wrap {
+      text-align: center;
+      margin-bottom: 32px;
+    }
+
+    .lang-btn {
+      font-family: 'Nunito', sans-serif;
+      font-size: 15px;
+      font-weight: 900;
+      color: #FFF8F2;
+      background: var(--accent);
+      border: 3px solid #7A5262;
+      border-radius: 20px;
+      padding: 12px 24px;
+      cursor: pointer;
+      transition: transform 0.2s ease, background 0.2s ease;
+      box-shadow: 0 4px 0 #7A5262;
+    }
+
+    .lang-btn:active {
+      transform: translateY(4px);
+      box-shadow: 0 0 0 #7A5262;
+    }
+
+    .card { 
+      background: var(--card); 
+      border: 3px solid var(--border); 
+      border-radius: 26px; 
+      padding: 32px 36px; 
+      box-shadow: 0 8px 24px rgba(78, 54, 41, 0.08);
+    }
+
+    /* Alt çizgi yerine sevimli yıldız divider'ı ekliyoruz */
+    h2 { 
+      font-family: 'Fredoka', sans-serif;
+      font-size: 20px; 
+      color: var(--accent);
+      margin-top: 32px; 
+      margin-bottom: 12px;
+      border-bottom: none; /* Düz çizgiyi kaldırdık */
+    }
+
+    /* H2 altındaki mini yıldızlar */
+    h2::after {
+      content: "★ ★ ★";
+      display: block;
+      color: var(--border);
+      font-size: 12px;
+      letter-spacing: 8px;
+      margin-top: 6px;
+    }
+
+    h2:first-child {
+      margin-top: 0;
+    }
+
+    p, li {
+      font-size: 15px;
+      font-weight: 400;
+    }
+
+    strong {
+      font-weight: 900;
+      color: var(--accent);
+    }
+
+    ul { 
+      padding-left: 24px; 
+      margin-top: 8px;
+    }
+
+    li {
+      margin-bottom: 8px;
+    }
+
+    .effective { 
+      text-align: center; 
+      color: var(--soft); 
+      font-size: 13px; 
+      font-weight: 700;
+      margin-top: 40px; 
+    }
+
+    /* Türkçe içerik başlangıçta gizli */
+    #content-tr {
+      display: none;
+    }
+
+    @media (max-width: 480px) {
+      .card { padding: 24px 20px; }
+      h1 { font-size: 30px; }
+    }
+  </style>
 </head>
 <body>
+
 <div class="wrap">
+  <header>
+    <h1>🍪 Cooky's Cafe</h1>
+    <div class="star-divider">˚₊‧꒰ა ☆ ໒꒱ ‧₊˚</div>
+    <div class="sub">Privacy Policy · Developer: Pie Piece</div>
+  </header>
 
-<header>
-  <h1>🍪 Cooky's Cafe — Privacy Policy</h1>
-  <div class="sub">Package: com.sleepypiebakery.cookymobile · Developer: Sleepy Pie Bakery</div>
-</header>
+  <div class="toggle-wrap">
+    <button class="lang-btn" id="langToggle">🇹🇷 Türkçe Okumak İçin Tıkla</button>
+  </div>
 
-<!-- ================= ENGLISH ================= -->
-<div class="card">
-  <h2><span class="flag">🇬🇧</span> Privacy Policy (English)</h2>
+  <div class="card">
+    <!-- ================= ENGLISH ================= -->
+    <div id="content-en">
+      <h2>1. Summary</h2>
+      <p><strong>Cooky's Cafe does not collect, store, transmit, sell, or share any personal data.</strong> The app works fully offline. Everything you create stays securely on your device.</p>
 
-  <h2>1. Summary</h2>
-  <p><strong>Cooky's Cafe does not collect, store, transmit, sell or share any personal data.</strong>
-  The app works fully offline. Everything you create stays on your device.</p>
+      <h2>2. Data stored on your device</h2>
+      <p>The app stores the following information <strong>locally on your device only</strong>, using the operating system's standard private storage:</p>
+      <ul>
+        <li>Notes, to-do items, and reminders you create</li>
+        <li>Your in-app progress (XP, level, cookie count)</li>
+        <li>App preferences (language, notification toggles)</li>
+      </ul>
+      <p>This data never leaves your device, is not sent to any server, and is not accessible to the developer.</p>
 
-  <h2>2. Data stored on your device</h2>
-  <p>The app stores the following information <strong>locally on your device only</strong>, using the
-  operating system's standard private storage (AsyncStorage):</p>
-  <ul>
-    <li>Notes, to-do items and reminders you create</li>
-    <li>Your in-app progress (XP, level, cookie count)</li>
-    <li>App preferences (language, notification toggles)</li>
-  </ul>
-  <p>This data never leaves your device, is not sent to any server, and is not accessible to the developer.</p>
+      <h2>3. Permissions</h2>
+      <p>The app does not require any sensitive permissions. If a future version adds optional local reminders, the app will ask for notification permission and will only show notifications you have enabled. Local notifications are generated on your device; no data is transmitted.</p>
 
-  <h2>3. Permissions</h2>
-  <p>The app does not require any sensitive permissions. If a future version adds optional local
-  reminders, the app will ask for the notification permission and will only show notifications
-  you have enabled. Local notifications are generated on your device; no data is transmitted.</p>
+      <h2>4. Ads, analytics and third parties</h2>
+      <p>The app contains <strong>no advertising, no analytics, no tracking</strong>, and no third-party services that collect user data. There are no in-app purchases and no accounts required.</p>
 
-  <h2>4. Ads, analytics and third parties</h2>
-  <p>The app contains <strong>no advertising, no analytics, no tracking</strong> and no third-party
-  services that collect user data. There are no in-app purchases and no accounts.</p>
+      <h2>5. Children's privacy</h2>
+      <p>The app is suitable for all ages and does not knowingly collect any data from anyone, including children under 13.</p>
 
-  <h2>5. Children's privacy</h2>
-  <p>The app is suitable for all ages and does not knowingly collect any data from anyone,
-  including children under 13.</p>
+      <h2>6. Data deletion</h2>
+      <p>You can delete all app data at any time by using the in-app trash feature, clearing the app's data in your device settings, or simply uninstalling the app. Because data lives only on your device, uninstalling removes it completely and permanently.</p>
 
-  <h2>6. Data deletion</h2>
-  <p>You can delete all app data at any time by using the in-app trash feature, clearing the app's
-  data in your device settings, or uninstalling the app. Because data lives only on your device,
-  uninstalling removes it completely.</p>
+      <h2>7. Changes to this policy</h2>
+      <p>If the app changes in the future, this policy will be updated on this page, and the "Effective date" below will be revised accordingly.</p>
 
-  <h2>7. Changes to this policy</h2>
-  <p>If the app changes in the future, this policy will be updated on this page and the
-  "Effective date" below will be revised.</p>
+      <h2>8. Contact</h2>
+      <p>For any privacy questions, please use the developer contact details (e-mail) published on the app's Google Play Store listing.</p>
+    </div>
 
-  <h2>8. Contact</h2>
-  <p>For any privacy question, please use the developer contact details (e-mail) published on the
-  app's Google Play Store listing.</p>
+    <!-- ================= TÜRKÇE ================= -->
+    <div id="content-tr">
+      <h2>1. Özet</h2>
+      <p><strong>Cooky's Cafe hiçbir kişisel veriyi toplamaz, saklamaz, iletmez, satmaz veya paylaşmaz.</strong> Uygulama tamamen çevrimdışı çalışır. Oluşturduğunuz her şey yalnızca kendi cihazınızda güvende kalır.</p>
+
+      <h2>2. Cihazınızda saklanan veriler</h2>
+      <p>Uygulama, aşağıdaki bilgileri <strong>yalnızca cihazınızda</strong>, işletim sisteminin standart özel depolama alanı aracılığıyla saklar:</p>
+      <ul>
+        <li>Oluşturduğunuz notlar, görevler ve hatırlatıcılar</li>
+        <li>Uygulama içi ilerlemeniz (XP, seviye, kurabiye sayısı)</li>
+        <li>Uygulama tercihleriniz (dil, bildirim anahtarları)</li>
+      </ul>
+      <p>Bu veriler cihazınızdan hiçbir şekilde dışarı çıkmaz, hiçbir sunucuya gönderilmez ve geliştirici tarafından erişilemez.</p>
+
+      <h2>3. İzinler</h2>
+      <p>Uygulama hassas hiçbir izin gerektirmez. Gelecek bir sürümde isteğe bağlı yerel hatırlatıcılar eklenirse, uygulama bildirim izni için onayınızı ister ve yalnızca sizin etkinleştirdiğiniz bildirimleri gösterir. Yerel bildirimler tamamen cihazınızda üretilir; dışarıya hiçbir veri iletilmez.</p>
+
+      <h2>4. Reklam, analitik ve üçüncü taraflar</h2>
+      <p>Uygulamada <strong>reklam, analitik, takip</strong> ve kullanıcı verisi toplayan herhangi bir üçüncü taraf hizmet <strong>kesinlikle bulunmaz</strong>. Uygulama içi satın alım veya kullanıcı hesabı zorunluluğu yoktur.</p>
+
+      <h2>5. Çocukların gizliliği</h2>
+      <p>Uygulama tüm yaş gruplarına uygundur ve 13 yaş altı çocuklar da dahil olmak üzere hiç kimseden bilerek veri toplamaz.</p>
+
+      <h2>6. Verilerin silinmesi</h2>
+      <p>Uygulama içi çöp kutusunu kullanarak, cihaz ayarlarından uygulama verilerini temizleyerek veya uygulamayı cihazınızdan kaldırarak tüm verilerinizi dilediğiniz zaman silebilirsiniz. Veriler yalnızca cihazınızda bulunduğu için, uygulamayı kaldırmak verileri kalıcı ve tamamen siler.</p>
+
+      <h2>7. Politika değişiklikleri</h2>
+      <p>Uygulama gelecekte değişirse veya güncellenirse, bu politika bu sayfa üzerinden güncellenir ve aşağıdaki "Yürürlük tarihi" buna göre yenilenir.</p>
+
+      <h2>8. İletişim</h2>
+      <p>Gizlilikle ilgili her türlü soru ve geri bildiriminiz için lütfen uygulamanın Google Play Store sayfasında yayımlanan geliştirici iletişim adresini (e-posta) kullanın.</p>
+    </div>
+  </div>
+
+  <div class="effective" id="dateText">Effective date: 12 October 2026</div>
 </div>
 
-<div class="divider">• • •</div>
+<script>
+  const toggleBtn = document.getElementById('langToggle');
+  const contentEn = document.getElementById('content-en');
+  const contentTr = document.getElementById('content-tr');
+  const dateText = document.getElementById('dateText');
+  
+  let currentLang = 'en';
 
-<!-- ================= TÜRKÇE ================= -->
-<div class="card">
-  <h2><span class="flag">🇹🇷</span> Gizlilik Politikası (Türkçe)</h2>
+  toggleBtn.addEventListener('click', () => {
+    if (currentLang === 'en') {
+      contentEn.style.display = 'none';
+      contentTr.style.display = 'block';
+      toggleBtn.innerHTML = '🇬🇧 Switch to English';
+      dateText.innerHTML = 'Yürürlük tarihi: 12 Ekim 2026';
+      currentLang = 'tr';
+    } else {
+      contentTr.style.display = 'none';
+      contentEn.style.display = 'block';
+      toggleBtn.innerHTML = '🇹🇷 Türkçe Okumak İçin Tıkla';
+      dateText.innerHTML = 'Effective date: 12 October 2026';
+      currentLang = 'en';
+    }
+  });
+</script>
 
-  <h2>1. Özet</h2>
-  <p><strong>Cooky's Cafe hiçbir kişisel veriyi toplamaz, saklamaz, iletmez, satmaz veya paylaşmaz.</strong>
-  Uygulama tamamen çevrimdışı çalışır. Oluşturduğunuz her şey yalnızca cihazınızda kalır.</p>
-
-  <h2>2. Cihazınızda saklanan veriler</h2>
-  <p>Uygulama, aşağıdaki bilgileri <strong>yalnızca cihazınızda</strong>, işletim sisteminin standart
-  özel depolama alanı (AsyncStorage) aracılığıyla saklar:</p>
-  <ul>
-    <li>Oluşturduğunuz notlar, görevler ve hatırlatıcılar</li>
-    <li>Uygulama içi ilerlemeniz (XP, seviye, kurabiye sayısı)</li>
-    <li>Uygulama tercihleriniz (dil, bildirim anahtarları)</li>
-  </ul>
-  <p>Bu veriler cihazınızdan hiçbir şekilde çıkmaz, hiçbir sunucuya gönderilmez ve geliştirici tarafından erişilemez.</p>
-
-  <h2>3. İzinler</h2>
-  <p>Uygulama hassas hiçbir izin gerektirmez. Gelecek bir sürümde isteğe bağlı yerel hatırlatıcılar
-  eklenirse, uygulama bildirim izni için onayınızı ister ve yalnızca sizin etkinleştirdiğiniz
-  bildirimleri gösterir. Yerel bildirimler cihazınızda üretilir; hiçbir veri iletilmez.</p>
-
-  <h2>4. Reklam, analitik ve üçüncü taraflar</h2>
-  <p>Uygulamada <strong>reklam, analitik, takip</strong> ve kullanıcı verisi toplayan üçüncü taraf
-  hizmet <strong>yoktur</strong>. Uygulama içi satın alım ve kullanıcı hesabı yoktur.</p>
-
-  <h2>5. Çocukların gizliliği</h2>
-  <p>Uygulama tüm yaş gruplarına uygundur ve 13 yaş altı çocuklar da dahil olmak üzere hiç kimseden
-  bilerek veri toplamaz.</p>
-
-  <h2>6. Verilerin silinmesi</h2>
-  <p>Uygulama içi çöp kutusunu kullanarak, cihaz ayarlarından uygulama verilerini temizleyerek veya
-  uygulamayı kaldırarak tüm verilerinizi her zaman silebilirsiniz. Veriler yalnızca cihazınızda
-  bulunduğu için uygulamayı kaldırmak verileri tamamen siler.</p>
-
-  <h2>7. Politika değişiklikleri</h2>
-  <p>Uygulama gelecekte değişirse bu politika bu sayfa üzerinden güncellenir ve aşağıdaki
-  "Yürürlük tarihi" yenilenir.</p>
-
-  <h2>8. İletişim</h2>
-  <p>Gizlilikle ilgili her türlü soru için lütfen uygulamanın Google Play Store sayfasında yayımlanan
-  geliştirici iletişim bilgilerini (e-posta) kullanın.</p>
-</div>
-
-<div class="effective">Effective date / Yürürlük tarihi: 12 October 2026</div>
-
-</div>
 </body>
 </html>
